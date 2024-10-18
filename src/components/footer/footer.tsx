@@ -4,7 +4,7 @@ export default component$(() => {
   return (
     <footer class="footer p-10 bg-neutral text-neutral-content">
       <div class="flex justify-center">
-        <span>Made with ♡ by CRYSTALOPS</span>
+        <p>Made with <span class="text-primary">♡</span> by CRYSTALOPS</p>
       </div>
     </footer>
   );
