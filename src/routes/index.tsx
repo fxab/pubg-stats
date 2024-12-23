@@ -1,8 +1,9 @@
 import { component$, useSignal } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { useNavigate, type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   const playerName = useSignal("");
+  const nav = useNavigate();
 
   return (
     <div class="text-center min-h-[300px]">
@@ -10,17 +11,21 @@ export default component$(() => {
         Welcome to <span class="text-primary">PUBG Stats</span>
       </h1>
       <p class="mb-4">Enter a player name to see their stats:</p>
-      <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <form
+        preventdefault:submit
+        onsubmit$={() => nav(`/player/${playerName.value}`)}
+        class="flex flex-col sm:flex-row justify-center items-center gap-4"
+      >
         <input
           type="text"
           placeholder="Player Name"
           class="input input-bordered w-full max-w-xs"
           bind:value={playerName}
         />
-        <Link href={`/player/${playerName.value}`} class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
           Search
-        </Link>
-      </div>
+        </button>
+      </form>
     </div>
   );
 });
