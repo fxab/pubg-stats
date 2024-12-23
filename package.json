@@ -37,7 +37,7 @@
     "daisyui": "^4.12.22",
     "eslint": "8.57.0",
     "eslint-plugin-qwik": "^1.12.0",
-    "postcss": "^8.4.47",
+    "postcss": "^8.4.49",
     "prettier": "3.3.3",
     "tailwindcss": "^3.4.14",
     "typescript": "5.4.5",
