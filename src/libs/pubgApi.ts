@@ -1,5 +1,6 @@
 import { RequestEventLoader } from "@builder.io/qwik-city";
 import axios from "axios";
+import { PlayerResponse } from "~/components/player/player";
 
 const getApiKey = (requestEvent: RequestEventLoader) => {
   const apiKey = requestEvent.env.get("PUBG_API_KEY");
@@ -34,7 +35,7 @@ export const fetchPubgApi = async (
 export const fetchPlayerStats = (
   playerName: string,
   requestEvent: RequestEventLoader
-) => {
+): Promise<PlayerResponse> => {
   return fetchPubgApi(
     `/players?filter[playerNames]=${playerName}`,
     requestEvent
