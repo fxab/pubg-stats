@@ -31,7 +31,6 @@ interface PlayerProps {
 }
 
 export default component$<PlayerProps>(({ playerData }) => {
-  console.log(playerData);
   if (!playerData || playerData.data.length === 0) {
     return (
       <div class="card w-96 bg-base-300 shadow-xl">
