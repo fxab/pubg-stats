@@ -1,65 +1,96 @@
-# Qwik City App ⚡️
+# PUBG Stats & Leaderboards ⚡️
 
-- [Qwik Docs](https://qwik.dev/)
-- [Discord](https://qwik.dev/chat)
-- [Qwik GitHub](https://github.com/QwikDev/qwik)
-- [@QwikDev](https://twitter.com/QwikDev)
-- [Vite](https://vitejs.dev/)
+A modern web application built with Qwik that allows players to track their PUBG (PlayerUnknown's Battlegrounds) statistics and create custom leaderboards from their match history.
 
----
+## Features
+
+- 🔍 Player Search: Look up any PUBG player by their username
+- 📊 Player Statistics: View detailed player information and stats
+- 🎮 Match History: Browse through recent matches with detailed performance data
+- 🏆 Custom Leaderboards: Create and share custom leaderboards based on match history
+- ⚡ Lightning Fast: Built with Qwik for optimal performance and interactivity
+
+## Tech Stack
+
+- [Qwik](https://qwik.dev/) - Framework for building instant web applications
+- [QwikCity](https://qwik.dev/qwikcity/overview/) - File-based routing and more
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [DaisyUI](https://daisyui.com/) - Component library for Tailwind CSS
+- [PUBG API](https://developer.pubg.com/) - Official PUBG game data API
+
+## Prerequisites
+
+- Node.js (version ^18.17.0 || ^20.3.0 || >=21.0.0)
+- PUBG API Key (Get one from [PUBG Developer Portal](https://developer.pubg.com/))
+
+## Getting Started
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/fxab/pubg-stats.git
+
+cd pubg-stats-app
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory and add your PUBG API key:
+
+```bash
+PUBG_API_KEY=your_api_key_here
+```
+
+4. Start the development server:
+
+```bash
+npm start
+```
 
 ## Project Structure
 
-This project is using Qwik with [QwikCity](https://qwik.dev/qwikcity/overview/). QwikCity is just an extra set of tools on top of Qwik to make it easier to build a full site, including directory-based routing, layouts, and more.
+The application follows a standard Qwik project structure:
 
-Inside your project, you'll see the following directory structure:
-
-```
-├── public/
-│   └── ...
-└── src/
-    ├── components/
-    │   └── ...
-    └── routes/
-        └── ...
-```
-
-- `src/routes`: Provides the directory-based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.dev/qwikcity/routing/overview/) for more info.
-
-- `src/components`: Recommended directory for components.
-
-- `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.
-
-## Add Integrations and deployment
-
-Use the `npm run qwik add` command to add additional integrations. Some examples of integrations includes: Cloudflare, Netlify or Express Server, and the [Static Site Generator (SSG)](https://qwik.dev/qwikcity/guides/static-site-generation/).
-
-```shell
-npm run qwik add # or `yarn qwik add`
-```
+- `src/routes/` - Page components and API routes
+- `src/components/` - Reusable UI components
+- `src/libs/` - Utility functions and API integrations
+- `types/` - TypeScript type definitions
+- `public/` - Static assets
 
 ## Development
 
-Development mode uses [Vite's development server](https://vitejs.dev/). The `dev` command will server-side render (SSR) the output during development.
+- Run development server: `npm start`
+- Build for production: `npm run build`
+- Preview production build: `npm run preview`
 
-```shell
-npm start # or `yarn start`
-```
+## Contributing
 
-> Note: during dev mode, Vite may request a significant number of `.js` files. This does not represent a Qwik production build.
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
 
-## Preview
+## License
 
-The preview command will create a production build of the client modules, a production build of `src/entry.preview.tsx`, and run a local server. The preview server is only for convenience to preview a production build locally and should not be used as a production server.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
-```shell
-npm run preview # or `yarn preview`
-```
+## Acknowledgments
 
-## Production
+- Thanks to PUBG for providing the API
+- Built with [Qwik](https://qwik.dev/)
+- UI components from [DaisyUI](https://daisyui.com/)
 
-The production build will generate client and server modules by running both client and server build commands. The build command will use Typescript to run a type check on the source code.
+## Contact
 
-```shell
-npm run build # or `yarn build`
-```
+Felix Aberham - [@OpsCrystal](https://twitter.com/OpsCrystal)
+
+Project Link: [https://github.com/fxab/pubg-stats](https://github.com/fxab/pubg-stats)
+
+---
+
+Made with ♡ by CRYSTALOPS
