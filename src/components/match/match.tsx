@@ -1,5 +1,9 @@
 import { component$, useSignal } from "@builder.io/qwik";
 import type { Match, Participant, Roster } from "../../../types/match";
+import {
+  HiChevronDownOutline,
+  HiChevronRightOutline,
+} from "@qwikest/icons/heroicons";
 
 interface MatchCardProps {
   match: Match;
@@ -50,7 +54,13 @@ export default component$((props: MatchCardProps) => {
             Duration: {formatDuration(props.match.data.attributes.duration)}
           </p>
         </div>
-        <div class="text-2xl">{isExpanded.value ? "−" : "+"}</div>
+        <div class="text-2xl">
+          {isExpanded.value ? (
+            <HiChevronDownOutline class="w-6 h-6" />
+          ) : (
+            <HiChevronRightOutline class="w-6 h-6" />
+          )}
+        </div>
       </div>
 
       {isExpanded.value && (
