@@ -1,6 +1,6 @@
 import { RequestEventLoader } from "@builder.io/qwik-city";
 import axios from "axios";
-import { PlayerResponse } from "~/components/player/player";
+import { PlayerResponse } from "../../types/player";
 
 const getApiKey = (requestEvent: RequestEventLoader) => {
   const apiKey = requestEvent.env.get("PUBG_API_KEY");

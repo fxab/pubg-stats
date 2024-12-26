@@ -1,34 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-
-interface PlayerAttributes {
-  name: string;
-  titleId: string;
-  shardId: string;
-  banType: string;
-  clanId: string;
-}
-
-interface PlayerData {
-  type: string;
-  id: string;
-  attributes: PlayerAttributes;
-  relationships: {
-    matches: {
-      data: Array<{
-        type: string;
-        id: string;
-      }>;
-    };
-  };
-}
-
-export interface PlayerResponse {
-  data: PlayerData[];
-}
-
-interface PlayerProps {
-  playerData: PlayerResponse;
-}
+import { PlayerProps } from "../../../types/player";
 
 export default component$<PlayerProps>(({ playerData }) => {
   if (!playerData || playerData.data.length === 0) {
