@@ -56,9 +56,9 @@ export default component$((props: MatchCardProps) => {
         </div>
         <div class="text-2xl">
           {isExpanded.value ? (
-            <HiChevronDownOutline class="w-6 h-6" />
+            <HiChevronDownOutline />
           ) : (
-            <HiChevronRightOutline class="w-6 h-6" />
+            <HiChevronRightOutline />
           )}
         </div>
       </div>
