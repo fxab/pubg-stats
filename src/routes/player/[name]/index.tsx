@@ -2,6 +2,7 @@ import { component$ } from "@builder.io/qwik";
 import { routeLoader$ } from "@builder.io/qwik-city";
 import { fetchPlayerMatches, fetchPlayerStats } from "~/libs/pubgApi";
 import PlayerComponent from "../../../components/player/player";
+import MatchComponent from "../../../components/match/match";
 
 export const usePlayerStats = routeLoader$(async (requestEvent) => {
   return fetchPlayerStats(requestEvent.params.name, requestEvent);
@@ -18,13 +19,15 @@ export default component$(() => {
   return (
     <div class="container mx-auto p-4">
       <PlayerComponent playerData={playerStats.value} />
-      <h2 class="text-2xl font-bold mt-8 mb-4">Player Matches</h2>
-      {playerMatches.value ? (
-        <pre class="bg-base-200 p-4 rounded">
-          {JSON.stringify(playerMatches.value, null, 2)}
-        </pre>
-      ) : (
-        <p>Error loading player matches.</p>
+      {playerMatches.value && (
+        <>
+          <h2 class="text-2xl font-bold mt-8 mb-4">Player Matches</h2>
+          <div class="space-y-4">
+            {playerMatches.value.map((match) => (
+              <MatchComponent key={match.data.id} match={match} />
+            ))}
+          </div>
+        </>
       )}
     </div>
   );
